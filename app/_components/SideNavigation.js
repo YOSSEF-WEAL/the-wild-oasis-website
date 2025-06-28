@@ -1,9 +1,10 @@
-import {
-  CalendarDaysIcon,
-  HomeIcon,
-  UserIcon,
-} from '@heroicons/react/24/solid';
-import SignOutButton from './SignOutButton';
+import
+  {
+    CalendarDaysIcon,
+    HomeIcon,
+    UserIcon,
+  } from '@heroicons/react/24/solid';
+import SignOutButton from '../../starter/components/SignOutButton';
 
 const navLinks = [
   {
@@ -23,7 +24,8 @@ const navLinks = [
   },
 ];
 
-function SideNavigation() {
+function SideNavigation()
+{
   return (
     <nav className='border-r border-primary-900'>
       <ul className='flex flex-col gap-2 h-full text-lg'>

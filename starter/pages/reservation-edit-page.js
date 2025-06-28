@@ -1,4 +1,5 @@
-export default function Page() {
+export default function page()
+{
   // CHANGE
   const reservationId = 23;
   const maxCapacity = 23;
