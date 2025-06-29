@@ -7,7 +7,6 @@ export const metadata = {
 };
 
 export default function page() {
-  // CHANGE
 
   return (
     <div>
