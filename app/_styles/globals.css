@@ -54,11 +54,29 @@
   }
 }
 
-/* For data picker */
+.rdp-range_start .rdp-day_button,
+.rdp-range_end .rdp-day_button {
+  background-color: var(--color-primary-700) !important;
+}
+.rdp-range_middle {
+  background-color: var(--color-primary-700) !important;
+  color: var(--color-primary-50);
+}
+.rdp-range_start .rdp-selected {
+  background-color: var(--color-primary-700) !important;
+}
 
-.rdp {
-  --rdp-cell-size: 32px !important;
-  --rdp-accent-color: theme("colors.accent.500") !important;
-  --rdp-background-color: theme("colors.accent.600") !important;
-  margin: 0 !important;
+.rdp-range_start,
+.rdp-range_end {
+  background: transparent !important;
+}
+.rdp-chevron {
+  display: inline-block;
+  fill: var(--color-accent-700) !important;
+}
+
+.rdp-month_caption {
+  option {
+    background-color: var(--color-primary-700);
+  }
 }
