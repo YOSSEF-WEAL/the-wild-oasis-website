@@ -28,7 +28,7 @@ export default async function Page({ params })
     cabin;
 
   return (
-    <div className="max-w-6xl mx-auto mt-8">
+    <div className="max-w-[85rem] mx-auto mt-8">
       <Cabin cabin={cabin} />
 
       <div>
