@@ -10,17 +10,16 @@ export const metadata = {
 export default async function page() {
   // const bookings = [];
   const session = await auth();
-  console.log("🚀 ~ page ~ session:", session);
 
   const bookings = await getBookings(session.user.guestId);
-  console.log("🚀 ~ page ~ bookings:", bookings);
+  // const bookings = await getBookings(167);
 
   return (
     <div>
       <h2 className="font-semibold text-2xl text-accent-400 mb-7">
         Your reservations
       </h2>
-      {/* 
+
       {bookings.length === 0 ? (
         <p className="text-lg">
           You have no reservations yet. Check out our{" "}
@@ -34,7 +33,7 @@ export default async function page() {
             <ReservationCard booking={booking} key={booking.id} />
           ))}
         </ul>
-      )} */}
+      )}
     </div>
   );
 }
