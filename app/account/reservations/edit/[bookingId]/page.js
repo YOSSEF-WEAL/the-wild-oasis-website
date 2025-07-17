@@ -1,7 +1,9 @@
+import SubmitButton from "@/app/_components/SubmitButton";
 import { updateBooking } from "@/app/_lib/actions";
 import { getBooking, getCabin } from "@/app/_lib/data-service";
 
-export default async function page({ params }) {
+export default async function page({ params })
+{
   const { bookingId } = params;
   const { numGuests, observations, cabinID } = await getBooking(bookingId);
   const { maxCapacity } = await getCabin(cabinID);
@@ -50,9 +52,7 @@ export default async function page({ params }) {
         </div>
 
         <div className="flex justify-end items-center gap-6">
-          <button className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-            Update reservation
-          </button>
+          <SubmitButton pendingText='Updating your Reservation...'>Update Reservation</SubmitButton>
         </div>
       </form>
     </div>
