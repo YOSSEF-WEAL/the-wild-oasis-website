@@ -4,14 +4,13 @@ import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
 import ReservationReminder from "../_components/ReservationReminder";
 
-export const revalidate = 3600; // not work because using searchParams
+export const revalidate = 3600;
 
 export const metadata = {
   title: "Cabins",
 };
 
-export default function page({ searchParams })
-{
+export default function page({ searchParams }) {
   const filter = searchParams?.capacity ?? "all";
 
   return (
@@ -25,7 +24,6 @@ export default function page({ searchParams })
         days exploring the dark forests around, or just relaxing in your private
         hot tub under the stars. Enjoy nature&apos;s beauty in your own little
         home away from home. The perfect spot for a peaceful, calm vacation.
-        Welcome to paradise.
       </p>
 
       <div className="flex justify-end mb-8">

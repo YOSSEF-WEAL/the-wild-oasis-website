@@ -1,30 +1,60 @@
 "use client";
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
+// Reservation Context
 const ReservationContext = createContext();
 
-const initialState = { from: undefined, to: undefined }
+function ReservationProvider({ children }) {
+  // Example: User information (replace with your actual reservation data)
+  const [reservationData, setReservationData] = useState({
+    user: { name: "Guest", id: null },
+    // Add other reservation-related data here
+  });
 
-function ReservationProvider({ children })
-{
-    const [ring, setRing] = useState(initialState);
-    const resetRange = () => setRing(initialState);
+  return (
+    <ReservationContext.Provider
+      value={{ reservationData, setReservationData }}
+    >
+      {children}
+    </ReservationContext.Provider>
+  );
+}
 
-    return (
-        <ReservationContext.Provider value={{ ring, setRing, resetRange }}>
-            {children}
-        </ReservationContext.Provider>
-    );
-};
+function useReservation() {
+  const context = useContext(ReservationContext);
 
-function useReservation()
-{
-    const context = useContext(ReservationContext);
+  if (!context) {
+    throw new Error("useReservation must be used within a ReservationProvider");
+  }
 
-    if (context === undefined) throw new Error('Context was used outside provider');
+  return context;
+}
 
-    return context;
-};
+// Date Context
+const DateContext = createContext();
 
-export { ReservationProvider, useReservation }
+const initialDateState = { from: null, to: null };
+
+function DateProvider({ children }) {
+  const [dateRange, setDateRange] = useState(initialDateState);
+  const resetDateRange = () => setDateRange(initialDateState);
+
+  return (
+    <DateContext.Provider value={{ dateRange, setDateRange, resetDateRange }}>
+      {children}
+    </DateContext.Provider>
+  );
+}
+
+function useDateRange() {
+  const context = useContext(DateContext);
+
+  if (context === undefined) {
+    throw new Error("useDateRange must be used within a DateProvider"); // Corrected error message
+  }
+
+  return context;
+}
+
+export { ReservationProvider, useReservation, DateProvider, useDateRange };
