@@ -1,11 +1,16 @@
 "use client";
 
-import { useReservation } from "./ReservationContext";
+import { useReservation, useDateRange } from "./ReservationContext";
 
 function ReservationForm({ cabin, user }) {
-  const { ring } = useReservation();
+  const { reservationData } = useReservation();
+  const { dateRange } = useDateRange();
+  console.log("🚀 ~ ReservationForm ~ dateRange:", dateRange);
 
-  const { maxCapacity } = cabin;
+  const { maxCapacity, regularPrice, discount } = cabin;
+
+  const startDate = dateRange.from;
+  const endDate = dateRange.to;
 
   return (
     <div className="h-full">
