@@ -1,13 +1,14 @@
 "use client";
 
-import {
+import
+{
   CalendarDaysIcon,
   HomeIcon,
   UserIcon,
 } from "@heroicons/react/24/solid";
-import SignOutButton from "../../starter/components/SignOutButton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import SignOutButton from "./SignOutButton";
 
 const navLinks = [
   {
@@ -27,7 +28,8 @@ const navLinks = [
   },
 ];
 
-function SideNavigation() {
+function SideNavigation()
+{
   const pathName = usePathname();
 
   return (
@@ -36,9 +38,8 @@ function SideNavigation() {
         {navLinks.map((link) => (
           <li key={link.name}>
             <Link
-              className={`${
-                pathName === link.href ? "bg-primary-900" : ""
-              } py-3 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200`}
+              className={`${pathName === link.href ? "bg-primary-900" : ""
+                } py-3 px-5 hover:bg-primary-900 hover:text-primary-100 transition-colors flex items-center gap-4 font-semibold text-primary-200`}
               href={link.href}
             >
               {link.icon}
