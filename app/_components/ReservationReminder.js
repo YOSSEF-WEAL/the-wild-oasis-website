@@ -2,10 +2,11 @@
 
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { format } from "date-fns";
-import { useDateRange } from "./ReservationContext";
+import { useCabinDateRange } from "./CabinDateContext";
 
-function ReservationReminder() {
-  const { dateRange, resetDateRange } = useDateRange();
+function ReservationReminder()
+{
+  const { dateRange, resetDateRange } = useCabinDateRange();
 
   if (!dateRange.from || !dateRange.to) return null;
 
