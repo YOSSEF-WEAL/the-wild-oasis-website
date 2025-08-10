@@ -4,27 +4,38 @@ import { useOptimistic } from "react";
 import ReservationCard from "./ReservationCard";
 import { deleteReservation } from "../_lib/actions";
 
-function ReservationList({ bookings }) {
+function ReservationList({ bookings })
+{
   const [optimisticBookings, optimisticDelete] = useOptimistic(
     bookings,
-    (curBookings, bookingId) => {
-      return curBookings.filter((booking) => booking.id !== bookingId);
-    }
+    (curBookings, bookingId) =>
+      curBookings.filter((booking) => booking.id !== bookingId)
   );
 
-  async function handleDelete(bookingId) {
+  async function handleDelete(bookingId)
+  {
     optimisticDelete(bookingId);
     await deleteReservation(bookingId);
   }
 
   return (
-    <ul className="space-y-6">
+    <ul
+      className="flex flex-col gap-2 p-2"
+    >
       {optimisticBookings.map((booking) => (
-        <ReservationCard
-          booking={booking}
+        <li
           key={booking.id}
-          onDelete={handleDelete}
-        />
+          className="
+            flex
+            justify-center
+            items-stretch
+          "
+        >
+          <ReservationCard
+            booking={booking}
+            onDelete={handleDelete}
+          />
+        </li>
       ))}
     </ul>
   );

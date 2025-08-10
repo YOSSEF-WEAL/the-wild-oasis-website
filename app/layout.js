@@ -1,8 +1,8 @@
 import Header from "./_components/Header";
 import
-  {
-    ReservationProvider,
-  } from "./_components/ReservationContext";
+{
+  ReservationProvider,
+} from "./_components/ReservationContext";
 import { CabinDateProvider } from "./_components/CabinDateContext";
 import "./_styles/globals.css";
 
@@ -30,7 +30,7 @@ export default function RootLayout({ children })
         className={`${josefin.className} relative antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col`}
       >
         <Header />
-        <div className="flex-1 px-8 py-12 min-h-full">
+        <div className="flex-1 px-2 md:px-8 md:py-12 py-1 min-h-full">
           <main className="max-w-[85rem] mx-auto">
             <ReservationProvider>
               <CabinDateProvider>{children}</CabinDateProvider>

@@ -19,7 +19,7 @@ function Filter()
     }
 
     return (
-        <div className="border border-primary-800 flex">
+        <div className="border border-primary-800 flex flex-wrap justify-between md:justify-start w-full md:w-fit">
             <Button filter={'all'} handleFilter={handleFilter} activeFilter={activeFilter}>All Cabins</Button>
             <Button filter={'small'} handleFilter={handleFilter} activeFilter={activeFilter}>1&mdash;3 Guests</Button>
             <Button filter={'medium'} handleFilter={handleFilter} activeFilter={activeFilter}>4&mdash;7 Guests</Button>
@@ -30,7 +30,7 @@ function Filter()
 
 function Button({ children, filter, handleFilter, activeFilter })
 {
-    return <button onClick={() => handleFilter(filter)} className={`${filter === activeFilter ? 'bg-primary-700 text-primary-50' : ''} px-5 py-2 cursor-pointer transition-colors hover:bg-primary-700`} >{children}</button>
+    return <button onClick={() => handleFilter(filter)} className={`${filter === activeFilter ? 'bg-primary-700 text-primary-50' : ''} w-[48%] md:w-fit px-5 py-2 cursor-pointer transition-colors hover:bg-primary-700`} >{children}</button>
 
 }
 

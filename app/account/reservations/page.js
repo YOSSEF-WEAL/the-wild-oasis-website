@@ -7,12 +7,11 @@ export const metadata = {
   title: "Reservations",
 };
 
-export default async function page() {
-  // const bookings = [];
+export default async function page()
+{
   const session = await auth();
 
   const bookings = await getBookings(session.user.guestId);
-  // const bookings = await getBookings(167);
 
   return (
     <div>
