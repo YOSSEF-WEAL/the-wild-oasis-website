@@ -4,9 +4,6 @@ This is a Next.js project He is my follower [`the-wild-oasis-dashboard`](https:/
 
 Escape to Luxury, Experience Unmatched Serenity Today
 
-[![JavaScript](https://img.shields.io/github/languages/percentage/YOSSEF-WEAL/the-wild-oasis-website/JavaScript)](https://github.com/YOSSEF-WEAL/the-wild-oasis-website)
-[![languages](https://img.shields.io/github/languages/count/YOSSEF-WEAL/the-wild-oasis-website)](https://github.com/YOSSEF-WEAL/the-wild-oasis-website)
-
 Built with the tools and technologies:
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
