@@ -1,4 +1,4 @@
-This is a Next.js project He is my follower [`the-wild-oasis-dashboard`](https://the-wild-oasis-lake-psi.vercel.app/).
+This is a Next.js project He is my follower [`the-wild-oasis-dashboard`](https://portfolio-yossef-weal.netlify.app/project/mz2ktwp6m9q5bx89amxlmeug).
 
 ## The Wild Oasis Website
 
